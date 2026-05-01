@@ -2,17 +2,18 @@
   "name": "shopping",
   "version": "1.0.0",
   "description": "this is testing app ",
-  "main": "index.js",
+  "main": "server.js",
+  "author": "Zikirullo",
+  "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "advice": "nodemon advice.js",
     "suggest": "nodemon suggest.js",
     "compute": "node compute.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-},
-  "author": "Zikirullo",
-  "license": "MIT",
+  },
   "dependencies": {
+    "express": "^5.2.1",
     "moment": "^2.30.1",
     "nodemon": "^3.1.14"
   }

@@ -1,9 +1,9 @@
- /* What is callback 
+/* What is callback 
 callback function:
 define       call
 callback     function
-*/ 
-// define 
+*/
+// define
 // 01
 // function division(a, b) {
 //     return a % b;
@@ -18,13 +18,13 @@ callback     function
 // }
 // 03
 function division(a, b, callback) {
-    if (b === 0) {
-        callback("can't divide by 0", null);
-} else {
+  if (b === 0) {
+    callback("can't divide by 0", null);
+  } else {
     callback(null, a % b);
+  }
 }
-}
-// call 
+// call
 
 // 01
 
@@ -32,10 +32,31 @@ function division(a, b, callback) {
 // console.log(result);
 
 // 02
-division(7, 0, function(err, data) {
-    if(err) console.log("ERROR", err);
-    else {
+division(7, 3, function (err, data) {
+  if (err) console.log("ERROR", err);
+  else {
+    console.log("RESULT", data);
+    console.log("...");
+    division(9, 3, function (err, data) {
+      if (err) console.log("ERROR", err);
+      else {
         console.log("RESULT", data);
         console.log("...");
-    }
-})
+      }
+      division(8, 3, function (err, data) {
+        if (err) console.log("ERROR", err);
+        else {
+          console.log("RESULT", data);
+          console.log("...");
+        }
+        division(5, 3, function (err, data) {
+          if (err) console.log("ERROR", err);
+          else {
+            console.log("RESULT", data);
+            console.log("...");
+          }
+        });
+      });
+    });
+  }
+});

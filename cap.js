@@ -55,7 +55,23 @@ function division(a, b) {
 division(8, 3)
   .then((data) => {
     console.log("Result:", data);
+    division(6, 3)
+      .then((data) => {
+        console.log("Result:", data);
+      })
+      .catch((err) => {
+        console.log("Error:", err);
+      });
+
+    division(8, 3)
+      .then((data) => {
+        console.log("Result:", data);
+      })
+      .catch((err) => {
+        console.log("Error:", err);
+      });
   })
+
   .catch((err) => {
     console.log("Error:", err);
   });

@@ -40,38 +40,23 @@ promise
 //     console.log("Error:", err);
 //   });
 
-function division(a, b) {
-  return new Promise((resolve, reject) => {
-    if (b === 0) {
-      reject("can't divide by 0");
-    } else {
-      setTimeout(function () {
-        resolve(a % b);
-      }, 3000);
-    }
-  });
+async function devision(a, b) {
+  if (b === 0) {
+    throw new Error("not devided by 0");
+  } else {
+    return a * b;
+  }
 }
 
-division(8, 3)
-  .then((data) => {
-    console.log("Result:", data);
-    division(6, 3)
-      .then((data) => {
-        console.log("Result:", data);
-      })
-      .catch((err) => {
-        console.log("Error:", err);
-      });
+async function run() {
+  let result = await devision(10, 2);
+  console.log("result one:", result);
 
-    division(8, 3)
-      .then((data) => {
-        console.log("Result:", data);
-      })
-      .catch((err) => {
-        console.log("Error:", err);
-      });
-  })
+  result = await devision(2, 1);
+  console.log("result two:", result);
 
-  .catch((err) => {
-    console.log("Error:", err);
-  });
+  result = await devision(8, 6);
+  console.log("result three:", result);
+}
+
+run();

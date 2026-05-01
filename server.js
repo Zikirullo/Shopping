@@ -1,3 +1,4 @@
+// console.log("web server start");
 const express = require("express");
 const app = express();
 
@@ -6,6 +7,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/restj", (req, res) => {
+  // console.log("/rest/get");
   res.json({ name: "Marco", age: 21, group: "MIT" });
 });
 
